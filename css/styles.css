@@ -5,14 +5,23 @@ body {
 	margin:0;
 	padding:0;
 }
-.fade {
+a {
+	text-decoration:underline;
+}
+a:hover {
+	text-decoration:none;
+}
+.fade,
+.fade-delay,
+.fade-delay-2 {
 	opacity:0;
 	transition: opacity 1s ease;
 }
 .fade-delay {
-	opacity:0;
-	transition: opacity 1s ease;
 	transition-delay: 0.5s;
+}
+.fade-delay-2 {
+	transition-delay: 1s;
 }
 .load {
     opacity:1;
@@ -96,6 +105,94 @@ video {
 	background:#fff;
 	min-height:300px;
 	margin:98px 0 40px 0;
+}
+.content {
+	margin-top:50px;
+}
+.content p {
+	text-align:left;
+}
+.project {
+	background:#4085d2;);
+	position:relative;
+	float:left;
+	display:block;
+	width:25%;
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	padding:12.5%;
+	cursor:pointer;
+}
+.project-content {
+	/*background:linear-gradient(to top left,
+           rgba(255,255,255,0) 0%,
+           rgba(255,255,255,0) calc(50% - 1px),
+           rgba(255,255,255,1) 50%,
+           rgba(255,255,255,0) calc(50% + 1px),
+           rgba(255,255,255,0) 100%);
+	display:block;*/
+	border-right:1px solid #fff;
+	border-bottom:1px solid #fff;
+	display:block;
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:1;
+	overflow:hidden;
+}
+.project-content hr {
+	transition: border 1s ease;
+	width: 150%;
+	height:150%;
+	border:0;
+    border-left: 1px solid #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    left:30%;
+    top:24%;
+    /*filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',  
+              M11=0.9914448613738104, M12=-0.13052619222005157,M21=0.13052619222005157, M22=0.9914448613738104); 
+ 	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.9914448613738104, M12=-0.13052619222005157, M21=0.13052619222005157, M22=0.9914448613738104,sizingMethod='auto expand')";*/ 
+}
+.project-content:hover hr {
+	border:0;
+}
+.project p {
+	font-weight:bold;
+	color:#fff;
+	position:absolute;
+	bottom:5%;
+	right:5%;
+	text-align:right;
+}
+.project a {
+	font-weight:bold;
+	color:#fff;
+}
+.experience p {
+	margin-left:10%;
+	margin-right:10%;
+	font-weight:normal;
+}
+.exp-title {
+	font-size:24px;
+	line-height:18px;
+	padding:30px 0 5px 0;
+	margin:0;
+}
+.exp-date {
+	font-style:italic;
+	margin:0;
+	padding:0 0 10px 0;
+}
+.exp-project {
+	padding:0 0 10px 0;
+	margin:0;
+	font-size:16px;
+	line-height:20px;
 }
 /*
 .logo {
