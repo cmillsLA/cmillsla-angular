@@ -68,10 +68,6 @@ div {
 	z-index:2;
 	display:none;
 }
-nav:hover
-div {
-	display:block;
-}
 .view {
 	position:relative;
 	width:100%;
