@@ -6,19 +6,22 @@ angular.module('portfolio.home', ['ngRoute'])
 	$scope.init = function() {
 		var bodyClass = $scope.getBodyClass();
 		bodyClass = bodyClass.indexOf('home-loaded');
+		var video = document.getElementsByTagName('video');
+		var p = document.getElementsByTagName('p');
 		// Animate on first visit.
 		if(bodyClass < 0) {
-			var fade = 'fade load';
-			var fadeDelay = 'fade-delay load';
+			
+			setTimeout(function() {
+				$scope.fadeIn(video[0]);
+			}, 0);
+			setTimeout(function() {
+				$scope.fadeIn(p[0]);
+			}, 400);
 			$scope.appendBodyClass(' home-loaded');
-		// Don't animate.
 		} else {
-			var fade = fadeDelay = 'load';
+			video[0].className += ' load';
+			p[0].className += ' load';
 		}
-		var video = document.getElementsByTagName('video');
-		video[0].className = fade;
-		var p = document.getElementsByTagName('p');
-		p[0].className = fadeDelay;	
 	}
 	// setTimeout to use CSS3 transitions.
 	setTimeout($scope.init, 0);

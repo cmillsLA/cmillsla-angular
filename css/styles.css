@@ -11,17 +11,9 @@ a {
 a:hover {
 	text-decoration:none;
 }
-.fade,
-.fade-delay,
-.fade-delay-2 {
+.fade {
 	opacity:0;
 	transition: opacity 1s ease;
-}
-.fade-delay {
-	transition-delay: 0.5s;
-}
-.fade-delay-2 {
-	transition-delay: 1s;
 }
 .load {
     opacity:1;
