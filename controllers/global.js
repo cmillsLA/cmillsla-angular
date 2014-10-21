@@ -43,8 +43,6 @@ angular.module('portfolio.global', ['ngRoute'])
 		pos = pos.replace('px','');
 		// Hide nav.
 		if(toggle || pos < dw + 3) {
-			//trigger.innerHTML = '&#9776;';
-			//trigger.className = 'trigger';
 			var slide = setInterval(function() {
 				pos = parseInt(pos) + 3;
 				if(pos >= w + 3) {
@@ -56,8 +54,6 @@ angular.module('portfolio.global', ['ngRoute'])
 			}, eas);
 		// Show nav.
 		} else {
-			//trigger.innerHTML = 'X';
-			//trigger.className = 'trigger trigger-x';
 			var slide = setInterval(function() {
 				if(pos < dw) {
 					clearInterval(slide);
