@@ -4,6 +4,8 @@ angular.module('portfolio.experience', ['ngRoute'])
 .controller('experience', ['$scope', function($scope) {
 
 	$scope.init = function() {
+		// Close nav if open.
+		$scope.shiftNav(true);
 		var h1 = document.getElementsByTagName('h1');
 		var p = document.getElementsByTagName('p');
 		var content = document.getElementsByClassName('content');

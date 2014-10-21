@@ -4,6 +4,8 @@ angular.module('portfolio.home', ['ngRoute'])
 .controller('home', ['$scope', function($scope) {
 
 	$scope.init = function() {
+		// Close nav if open.
+		$scope.shiftNav(true);
 		var video = document.getElementsByTagName('video');
 		var p = document.getElementsByTagName('p');
 		// Animate on first visit.

@@ -53,20 +53,47 @@ nav {
 	position:absolute;
 	top:10px;
 	right:30px;
-	z-index:1;
+	z-index:3;
 }
 .trigger {
+	position:relative;
+	z-index:3;
 	color:#252525;
 	font-size:48px;
 	cursor:pointer;
 }
 nav
 div {
-	position:absolute;
-	top:50px;
-	right:30px;
-	z-index:2;
-	display:none;
+	background:#fff;
+	height:100%;
+	width:20%;
+	border-left:3px solid #dfdfdc;
+	position:fixed;
+	top:0;
+	left:100%;
+	padding:150px 0 0 0;
+}
+nav
+div
+a {
+	color:#999;
+	width:100%;
+	display:block;
+	padding:10px 20px;
+	border-top:1px dotted #252525;
+	font-size:24px;
+	font-weight:normal;
+	text-decoration:none;
+}
+nav
+div
+a:last-child {
+	border-bottom:1px dotted #252525;
+}
+nav
+div
+a:hover {
+	background:#f0f0f0;
 }
 .view {
 	position:relative;

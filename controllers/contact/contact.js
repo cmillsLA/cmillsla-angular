@@ -4,6 +4,8 @@ angular.module('portfolio.contact', ['ngRoute'])
 .controller('contact', ['$scope', function($scope) {
 
 	$scope.init = function() {
+		// Close nav if open.
+		$scope.shiftNav(true);
 		var h1 = document.getElementsByTagName('h1');
 		var p = document.getElementsByTagName('p');
 		setTimeout(function() {

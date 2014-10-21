@@ -13,7 +13,6 @@ angular.module('portfolio.global', ['ngRoute'])
 
 	// Fade elements with CSS3.
 	$scope.fadeIn = function(elem, multi) {
-		console.log(elem);
 		var _this = this;
 		// Fade single element.
 		if(!multi) {
@@ -29,15 +28,45 @@ angular.module('portfolio.global', ['ngRoute'])
 		}
 	}
 
-	// Toggle nav.
-	$scope.triggerNav = function() {
-		var nav = document.getElementsByTagName('nav');
-		var dropdown = nav[0].getElementsByTagName('div');
-		dropdown = dropdown[0];
-		if(window.getComputedStyle(dropdown).display === 'none') {
-			dropdown.style.display = 'block';
+	$scope.shiftNav = function(toggle) {
+		clearInterval(slide);
+		var eas = 2;
+		var w = document.body.clientWidth;
+		var dw = (w / 100) * 80;
+		var n = document.getElementsByTagName('nav');
+		var d = n[0].getElementsByTagName('div');
+		var trigger = document.getElementsByClassName('trigger');
+		trigger = trigger[0];
+		d = d[0];
+		var pos = window.getComputedStyle(d).left;
+		d.style.left = pos;
+		pos = pos.replace('px','');
+		// Hide nav.
+		if(toggle || pos < dw + 3) {
+			//trigger.innerHTML = '&#9776;';
+			//trigger.className = 'trigger';
+			var slide = setInterval(function() {
+				pos = parseInt(pos) + 3;
+				if(pos >= w + 3) {
+					clearInterval(slide);
+					d.style.left = '100%';
+				} else {
+					d.style.left = pos + 'px';
+				}
+			}, eas);
+		// Show nav.
 		} else {
-			dropdown.style.display = 'none';
+			//trigger.innerHTML = 'X';
+			//trigger.className = 'trigger trigger-x';
+			var slide = setInterval(function() {
+				if(pos < dw) {
+					clearInterval(slide);
+					d.style.left = '80%';
+				} else {
+					d.style.left = pos + 'px';
+				}
+				pos = parseInt(pos - 3);
+			}, eas);
 		}
 	}
 
