@@ -28,9 +28,13 @@ angular.module('portfolio.global', ['ngRoute'])
 		}
 	}
 
+	// Toggle nav.
 	$scope.shiftNav = function(toggle) {
-		console.log('shift nav');
+		// Remove highlighting.
+		window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+		// Clear previous interval, if any.
 		clearInterval(slide);
+		// Get viewport width.
 		var eas = 2;
 		var w = document.body.clientWidth;
 		var dw = (w / 100) * 80;
@@ -40,19 +44,20 @@ angular.module('portfolio.global', ['ngRoute'])
 		trigger = trigger[0];
 		d = d[0];
 		var pos = window.getComputedStyle(d).left;
-		pos = pos.replace('px','');
+		// Remove px, parseInt.
+		if(pos.indexOf('px') > -1) {
+			pos = pos.replace('px','');
+		// Remove %, parseInt - Safari.
+		} else if(pos.indexOf('%') > -1) {
+			pos = pos.replace('%','');
+			pos = (w / 100) * pos;
+		}
 		pos = parseInt(pos);
 		d.style.left = dw;
-		console.log(w);
-		console.log(dw);
-		console.log(n);
-		console.log(d);
-		console.log(trigger);
 		// Hide nav.
 		if(toggle || pos < dw + 3) {
-			console.log('hide');
 			var slide = setInterval(function() {
-				pos = parseInt(pos) + 3;
+				pos = pos + 3;
 				if(pos >= w + 3) {
 					clearInterval(slide);
 					d.style.left = '100%';
@@ -62,9 +67,6 @@ angular.module('portfolio.global', ['ngRoute'])
 			}, eas);
 		// Show nav.
 		} else {
-			console.log('show');
-			console.log(typeof pos);
-			console.log(pos);
 			var slide = setInterval(function() {
 				if(pos < dw) {
 					clearInterval(slide);

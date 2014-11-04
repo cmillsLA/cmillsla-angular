@@ -18,10 +18,10 @@ angular.module('portfolio.work', ['ngRoute'])
 		}, 100);
 		setTimeout(function() {
 			$scope.fadeIn(projects, true);
-		}, 100);
+		}, 250);
 		setTimeout(function() {
 			$scope.fadeIn(projectContent, true);
-		}, 1000);
+		}, 1250);
 	}
 	// setTimeout to use CSS3 transitions.
 	setTimeout($scope.init, 0);
