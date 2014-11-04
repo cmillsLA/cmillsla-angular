@@ -14,6 +14,7 @@ a:hover {
 .fade {
 	opacity:0;
 	transition: opacity 1s ease;
+	-webkit-transition: opacity 1s ease;
 }
 .load {
     opacity:1;
@@ -128,7 +129,7 @@ video {
 	text-align:left;
 }
 .project {
-	background:#4085d2;);
+	background:#4085d2;
 	position:relative;
 	float:left;
 	display:block;
@@ -160,11 +161,13 @@ video {
 }
 .project-content hr {
 	transition: border 1s ease;
+	-webkit-transition: border 1s ease;
 	width: 150%;
 	height:150%;
 	border:0;
     border-left: 1px solid #fff;
     transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
     position: absolute;
     left:30%;
     top:24%;
@@ -209,10 +212,3 @@ video {
 	font-size:16px;
 	line-height:20px;
 }
-/*
-.logo {
-	background:url('../img/logo.png') no-repeat;
-	width:43px;
-	height:37px;
-}
-*/

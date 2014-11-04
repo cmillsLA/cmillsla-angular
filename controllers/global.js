@@ -29,6 +29,7 @@ angular.module('portfolio.global', ['ngRoute'])
 	}
 
 	$scope.shiftNav = function(toggle) {
+		console.log('shift nav');
 		clearInterval(slide);
 		var eas = 2;
 		var w = document.body.clientWidth;
@@ -39,10 +40,17 @@ angular.module('portfolio.global', ['ngRoute'])
 		trigger = trigger[0];
 		d = d[0];
 		var pos = window.getComputedStyle(d).left;
-		d.style.left = pos;
 		pos = pos.replace('px','');
+		pos = parseInt(pos);
+		d.style.left = dw;
+		console.log(w);
+		console.log(dw);
+		console.log(n);
+		console.log(d);
+		console.log(trigger);
 		// Hide nav.
 		if(toggle || pos < dw + 3) {
+			console.log('hide');
 			var slide = setInterval(function() {
 				pos = parseInt(pos) + 3;
 				if(pos >= w + 3) {
@@ -54,6 +62,9 @@ angular.module('portfolio.global', ['ngRoute'])
 			}, eas);
 		// Show nav.
 		} else {
+			console.log('show');
+			console.log(typeof pos);
+			console.log(pos);
 			var slide = setInterval(function() {
 				if(pos < dw) {
 					clearInterval(slide);
@@ -61,7 +72,7 @@ angular.module('portfolio.global', ['ngRoute'])
 				} else {
 					d.style.left = pos + 'px';
 				}
-				pos = parseInt(pos - 3);
+				pos = pos - 3;
 			}, eas);
 		}
 	}
