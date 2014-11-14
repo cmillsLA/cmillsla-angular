@@ -184,6 +184,7 @@ video {
 	color:#f0f0f0;
 	font-size:36px;
 	font-weight:normal;
+	cursor:pointer;
 }
 .project {
 	background:#4085d2;
